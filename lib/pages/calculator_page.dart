@@ -73,6 +73,13 @@ class _CalculatorPageState extends State<CalculatorPage> {
             onSaved: _controller.setFloorLength,
           ),
           SizedBox(height: kBigSpace),
+          TextHeader(label: kPriceBySquareMeterHeader),
+          SizedBox(height: kSpace),
+          NumberInputField(
+            label: kEmblemCoin,
+            onSaved: _controller.setFloorWidth,
+          ),
+          SizedBox(height: kBigSpace),
           PrimaryButton(
             label: kCalculateButton,
             onPressed: _onCalculate,

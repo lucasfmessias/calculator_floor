@@ -2,6 +2,8 @@ const kAppTitle = 'Calculadora de Pisos';
 
 const kEnvironmentHeader = 'Dimensões do Cômodo';
 const kFloorHeader = 'Dimensões do Piso';
+const kPriceBySquareMeterHeader = 'Preço / m²';
+const kEmblemCoin = 'BRL';
 const kWidth = 'Largura';
 const kLenght = 'Comprimento';
 const kMeters = 'metros';
