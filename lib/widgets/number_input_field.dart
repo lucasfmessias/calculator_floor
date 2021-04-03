@@ -19,7 +19,7 @@ class NumberInputField extends StatelessWidget {
       keyboardType: TextInputType.numberWithOptions(decimal: true),
       decoration: InputDecoration(
         labelText: label,
-        border: OutlineInputBorder(),
+        border: OutlineInputBorder(), // Colocar borda envolta dos campos
       ),
     );
   }

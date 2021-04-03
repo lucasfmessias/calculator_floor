@@ -1,10 +1,12 @@
 const kAppTitle = 'Calculadora de Pisos';
 
-const kEnvironmentHeader = 'Medidas do Ambiente';
-const kFloorHeader = 'Medidas do Piso';
+const kEnvironmentHeader = 'Dimensões do Cômodo';
+const kFloorHeader = 'Dimensões do Piso';
 const kWidth = 'Largura';
 const kLenght = 'Comprimento';
 const kMeters = 'metros';
+const kUnitFloor = 'Pisos';
+const kUnitSquareMeter = 'm²';
 const kCalculateButton = 'Calcular';
 
 const kResult = 'Resultado';
@@ -14,12 +16,15 @@ const kTotalFloor = 'Quantidade total de pisos';
 const kAreaWithoutFooter = 'Metragem quadrada sem rodapé';
 const kAreaWithFooter = 'Metragem quadrada com rodapé';
 
-const kHeaderOpacity = 0.1;
-const kDecimalPrecision = 2;
+const kHeaderOpacity = 0.2;
+const kDecimalPrecisionZero = 0;
+const kDecimalPrecisionTwo = 2;
 
 const kSmallSpace = 10.0;
 const kSpace = 20.0;
 const kBigSpace = 40.0;
 
 const kHeaderFontSize = 16.0;
+const kButtonFontSize = 16.0;
 const kButtonHeight = 52.0;
+const kButtonWidth = 88.0;

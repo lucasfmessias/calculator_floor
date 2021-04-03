@@ -21,10 +21,21 @@ class _CalculatorPageState extends State<CalculatorPage> {
       appBar: AppBar(
         title: Text(kAppTitle),
       ),
-      body: SingleChildScrollView(
-        child: Form(
-          key: _formKey,
-          child: _buildForm(),
+      body: GestureDetector(
+        onTap: () {
+          // Use FocusScope.of(context) to get the current FocusNode
+          FocusScopeNode currentFocus = FocusScope.of(context);
+
+          if (!currentFocus.hasPrimaryFocus) {
+            currentFocus.unfocus();
+          }
+        },
+        child: SingleChildScrollView(
+          // To solve overflow de keyboard use SingleChildScrollView
+          child: Form(
+            key: _formKey,
+            child: _buildForm(),
+          ),
         ),
       ),
     );
@@ -32,8 +43,10 @@ class _CalculatorPageState extends State<CalculatorPage> {
 
   Widget _buildForm() {
     return Container(
-      padding: EdgeInsets.all(kSpace), // espaçamento nas bordas
+      // espaçamento nas bordas
+      padding: EdgeInsets.all(kSpace),
       child: Column(
+        // esticar todos os filhos
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           TextHeader(label: kEnvironmentHeader),

@@ -1,3 +1,4 @@
+import 'package:calculator_floor/core/constants.dart';
 import 'package:flutter/material.dart';
 
 class PrimaryButton extends StatelessWidget {
@@ -13,7 +14,24 @@ class PrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      child: Text(label.toUpperCase()),
+      child: Text(
+        label.toUpperCase(),
+        style: TextStyle(
+          fontSize: kButtonFontSize,
+        ),
+      ),
+      // Deixando o estilo do botão arredondado
+      style: ButtonStyle(
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+            side: BorderSide(color: Colors.deepPurpleAccent),
+          ),
+        ),
+        minimumSize: MaterialStateProperty.all(
+          Size(kButtonWidth, kButtonHeight),
+        ),
+      ),
       onPressed: onPressed,
     );
   }

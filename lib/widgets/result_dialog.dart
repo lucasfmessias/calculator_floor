@@ -13,9 +13,7 @@ class ResultDialog extends StatelessWidget {
   static void show(BuildContext context, ResultModel result) {
     showDialog(
       context: context,
-      builder: (BuildContext context) => ResultDialog(
-        result: result,
-      ),
+      builder: (BuildContext context) => ResultDialog(result: result),
     );
   }
 
@@ -24,26 +22,36 @@ class ResultDialog extends StatelessWidget {
     return AlertDialog(
       title: Text(kResult),
       content: Container(
+        // criar uma coluna dentro do container
         child: Column(
-          // criar uma coluna dentro do container
-          mainAxisSize: MainAxisSize.min, // mínimo valor na vertical
+          // mínimo valor na vertical
+          mainAxisSize: MainAxisSize.min,
           children: [
-            _buildTile(result.amountPieces, kAmountFloor),
-            _buildTile(result.amountFooter, kTotalFloorToFooter),
-            _buildTile(result.amountPiecesAndFooter, kTotalFloor),
+            _buildTile(result.amountPieces, kUnitFloor, kAmountFloor),
+            _buildTile(result.amountFooter, kUnitFloor, kTotalFloorToFooter),
+            _buildTile(result.amountPiecesAndFooter, kUnitFloor, kTotalFloor),
             Divider(),
-            _buildTile(result.areaWithoutFooter, kAreaWithoutFooter),
-            _buildTile(result.areaWithFooter, kAreaWithFooter),
+            _buildTile(
+                result.areaWithoutFooter, kUnitSquareMeter, kAreaWithoutFooter),
+            _buildTile(
+                result.areaWithFooter, kUnitSquareMeter, kAreaWithFooter),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildTile(num value, String description) {
-    return ListTile(
-      title: Text(value.toStringAsFixed(kDecimalPrecision)),
-      subtitle: Text(description),
-    );
+  Widget _buildTile(num value, String type, String description) {
+    if (type != kUnitSquareMeter) {
+      return ListTile(
+        title: Text('${value.toStringAsFixed(kDecimalPrecisionZero)} $type'),
+        subtitle: Text(description),
+      );
+    } else {
+      return ListTile(
+        title: Text('${value.toStringAsFixed(kDecimalPrecisionTwo)} $type'),
+        subtitle: Text(description),
+      );
+    }
   }
 }
