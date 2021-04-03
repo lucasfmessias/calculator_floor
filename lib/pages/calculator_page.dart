@@ -20,12 +20,17 @@ class _CalculatorPageState extends State<CalculatorPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(kAppTitle),
+        actions: <Widget>[
+          new IconButton(
+            icon: new Icon(Icons.cleaning_services_rounded),
+            onPressed: _clearFields,
+          )
+        ],
       ),
       body: GestureDetector(
         onTap: () {
           // Use FocusScope.of(context) to get the current FocusNode
           FocusScopeNode currentFocus = FocusScope.of(context);
-
           if (!currentFocus.hasPrimaryFocus) {
             currentFocus.unfocus();
           }
@@ -95,5 +100,9 @@ class _CalculatorPageState extends State<CalculatorPage> {
       final result = _controller.calculate();
       ResultDialog.show(context, result);
     }
+  }
+
+  void _clearFields() {
+    _formKey.currentState?.reset();
   }
 }
