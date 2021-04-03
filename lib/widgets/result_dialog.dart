@@ -27,31 +27,46 @@ class ResultDialog extends StatelessWidget {
           // mínimo valor na vertical
           mainAxisSize: MainAxisSize.min,
           children: [
-            _buildTile(result.amountPieces, kUnitFloor, kAmountFloor),
-            _buildTile(result.amountFooter, kUnitFloor, kTotalFloorToFooter),
-            _buildTile(result.amountPiecesAndFooter, kUnitFloor, kTotalFloor),
+            _buildTile(
+              value: result.amountPieces,
+              description: kAmountFloor,
+            ),
+            _buildTile(
+              value: result.amountFooter,
+              description: kTotalFloorToFooter,
+            ),
+            _buildTile(
+              value: result.amountPiecesAndFooter,
+              description: kTotalFloor,
+            ),
             Divider(),
             _buildTile(
-                result.areaWithoutFooter, kUnitSquareMeter, kAreaWithoutFooter),
+              value: result.areaWithoutFooter,
+              description: kAreaWithoutFooter,
+            ),
             _buildTile(
-                result.areaWithFooter, kUnitSquareMeter, kAreaWithFooter),
+              value: result.areaWithFooter,
+              description: kAreaWithFooter,
+            ),
+            Divider(),
+            _buildTile(
+              value: result.totalPriceWithoutFooter,
+              description: kAmountToPayWithoutFooter,
+            ),
+            _buildTile(
+              value: result.totalPriceWithFooter,
+              description: kAmountToPayWithFooter,
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildTile(num value, String type, String description) {
-    if (type != kUnitSquareMeter) {
-      return ListTile(
-        title: Text('${value.toStringAsFixed(kDecimalPrecisionZero)} $type'),
-        subtitle: Text(description),
-      );
-    } else {
-      return ListTile(
-        title: Text('${value.toStringAsFixed(kDecimalPrecisionTwo)} $type'),
-        subtitle: Text(description),
-      );
-    }
+  Widget _buildTile({num value, String description}) {
+    return ListTile(
+      title: Text(value.toStringAsFixed(kDecimalPrecisionTwo)),
+      subtitle: Text(description),
+    );
   }
 }

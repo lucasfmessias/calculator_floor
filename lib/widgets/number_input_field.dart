@@ -15,7 +15,7 @@ class NumberInputField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       onSaved: onSaved,
-      validator: ValidatorHelper.isNotEmptyNumber,
+      validator: ValidatorHelper.validateNumberField,
       keyboardType: TextInputType.numberWithOptions(decimal: true),
       decoration: InputDecoration(
         labelText: label,

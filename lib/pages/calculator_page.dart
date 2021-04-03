@@ -77,7 +77,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
           SizedBox(height: kSpace),
           NumberInputField(
             label: kEmblemCoin,
-            onSaved: _controller.setFloorWidth,
+            onSaved: _controller.setPrice,
           ),
           SizedBox(height: kBigSpace),
           PrimaryButton(

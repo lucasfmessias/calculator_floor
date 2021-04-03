@@ -2,13 +2,13 @@ const kAppTitle = 'Calculadora de Pisos';
 
 const kEnvironmentHeader = 'Dimensões do Cômodo';
 const kFloorHeader = 'Dimensões do Piso';
-const kPriceBySquareMeterHeader = 'Preço / m²';
+const kPriceBySquareMeterHeader = 'Preço /m²';
+const kAmountToPayWithoutFooter = 'R\$ total à pagar sem rodapé';
+const kAmountToPayWithFooter = 'R\$ total à pagar com rodapé';
 const kEmblemCoin = 'BRL';
 const kWidth = 'Largura';
 const kLenght = 'Comprimento';
 const kMeters = 'metros';
-const kUnitFloor = 'Pisos';
-const kUnitSquareMeter = 'm²';
 const kCalculateButton = 'Calcular';
 
 const kResult = 'Resultado';
