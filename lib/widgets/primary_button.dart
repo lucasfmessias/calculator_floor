@@ -20,19 +20,28 @@ class PrimaryButton extends StatelessWidget {
           fontSize: kButtonFontSize,
         ),
       ),
-      // Deixando o estilo do botão arredondado
       style: ButtonStyle(
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-            side: BorderSide(color: Colors.deepPurpleAccent),
+        shape: MaterialStateProperty.all<CircleBorder>(
+          CircleBorder(
+            side: BorderSide(
+              color: Colors.deepPurpleAccent,
+            ),
           ),
         ),
         minimumSize: MaterialStateProperty.all(
           Size(kButtonWidth, kButtonHeight),
         ),
+        alignment: Alignment.center,
       ),
       onPressed: onPressed,
     );
   }
 }
+
+// Create curve in button 
+// shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+//   RoundedRectangleBorder(
+//     borderRadius: BorderRadius.circular(20),
+//     side: BorderSide(color: Colors.deepPurpleAccent),
+//   ),
+// ),

@@ -85,9 +85,11 @@ class _CalculatorPageState extends State<CalculatorPage> {
             onSaved: _controller.setPrice,
           ),
           SizedBox(height: kBigSpace),
-          PrimaryButton(
-            label: kCalculateButton,
-            onPressed: _onCalculate,
+          UnconstrainedBox(
+            child: PrimaryButton(
+              label: kCalculateButton,
+              onPressed: _onCalculate,
+            ),
           ),
         ],
       ),

@@ -28,5 +28,5 @@ const kBigSpace = 40.0;
 
 const kHeaderFontSize = 16.0;
 const kButtonFontSize = 16.0;
-const kButtonHeight = 52.0;
-const kButtonWidth = 88.0;
+const kButtonHeight = 100.0;
+const kButtonWidth = 125.0;
