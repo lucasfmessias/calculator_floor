@@ -21,43 +21,45 @@ class ResultDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       title: Text(kResult),
-      content: Container(
-        // criar uma coluna dentro do container
-        child: Column(
-          // mínimo valor na vertical
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            _buildTile(
-              value: result.amountPieces,
-              description: kAmountFloor,
-            ),
-            _buildTile(
-              value: result.amountFooter,
-              description: kTotalFloorToFooter,
-            ),
-            _buildTile(
-              value: result.amountPiecesAndFooter,
-              description: kTotalFloor,
-            ),
-            Divider(),
-            _buildTile(
-              value: result.areaWithoutFooter,
-              description: kAreaWithoutFooter,
-            ),
-            _buildTile(
-              value: result.areaWithFooter,
-              description: kAreaWithFooter,
-            ),
-            Divider(),
-            _buildTile(
-              value: result.totalPriceWithoutFooter,
-              description: kAmountToPayWithoutFooter,
-            ),
-            _buildTile(
-              value: result.totalPriceWithFooter,
-              description: kAmountToPayWithFooter,
-            ),
-          ],
+      content: SingleChildScrollView(
+        child: Container(
+          // criar uma coluna dentro do container
+          child: Column(
+            // mínimo valor na vertical
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _buildTile(
+                value: result.amountPieces,
+                description: kAmountFloor,
+              ),
+              _buildTile(
+                value: result.amountFooter,
+                description: kTotalFloorToFooter,
+              ),
+              _buildTile(
+                value: result.amountPiecesAndFooter,
+                description: kTotalFloor,
+              ),
+              Divider(),
+              _buildTile(
+                value: result.areaWithoutFooter,
+                description: kAreaWithoutFooter,
+              ),
+              _buildTile(
+                value: result.areaWithFooter,
+                description: kAreaWithFooter,
+              ),
+              Divider(),
+              _buildTile(
+                value: result.totalPriceWithoutFooter,
+                description: kAmountToPayWithoutFooter,
+              ),
+              _buildTile(
+                value: result.totalPriceWithFooter,
+                description: kAmountToPayWithFooter,
+              ),
+            ],
+          ),
         ),
       ),
     );
